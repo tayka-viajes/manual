@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Usuario: Gestor de Contenido</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #212529;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+        }
+        h1, h2, h3, h4 {
+            color: #343a40;
+            line-height: 1.3;
+        }
+        h1 {
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+        }
+        h2 {
+            border-bottom: 1px solid #ced4da;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        h3 {
+            margin-top: 30px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+            margin-top: 10px;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        blockquote {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            margin: 15px 0;
+            padding: 15px 20px;
+        }
+        blockquote p {
+            margin: 0;
+            font-weight: 500;
+        }
+        ul, ol {
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        hr {
+            margin: 40px 0;
+            border: 0;
+            border-top: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Manual de Usuario: Cómo Cargar Contenido en el Gestor (Promos, Destinos y Paquetes)</h1>
+
+    <p>Bienvenido a la guía para administrar el contenido de la página web. Este documento te explicará cómo crear y gestionar las diferentes secciones, como los destinos, descuentos, paquetes y promociones.</p>
+
+    <h2>1. ¿Cómo Acceder?</h2>
+    <ol>
+        <li>Ingresa a la dirección web del panel de administración (Ej: <code>https.tu-pagina-web.com/admin</code>).</li>
+        <li>Introduce tu <strong>nombre de usuario</strong> y <strong>contraseña</strong> para iniciar sesión.</li>
+    </ol>
+
+    <h2>2. El Panel de Contenido</h2>
+    <p>Una vez dentro, verás un menú lateral con todas las secciones que puedes editar. Esta área se llama <strong>Content Manager</strong>. Desde aquí puedes seleccionar qué tipo de contenido quieres crear o editar.</p>
+    
+    <img src="edc204a5-2226-406b-9501-f384af24760b.jpeg" alt="Panel de control principal de Strapi">
+
+    <p>Para crear cualquier contenido, el proceso general es:</p>
+    <ol>
+        <li>Haz clic en la sección que quieres (ej. <code>Paquete</code>).</li>
+        <li>Haz clic en el botón azul <strong>"+ Create new entry"</strong> (o "Crear nueva entrada").</li>
+        <li>Rellena los campos.</li>
+        <li>Haz clic en <strong>Guardar</strong> y luego en <strong>Publicar</strong>.</li>
+    </ol>
+
+    <hr>
+
+    <h2>3. Manejo de Imágenes (Media Library)</h2>
+    <p>Antes de crear contenido, es vital entender cómo manejar las imágenes.</p>
+    <ul>
+        <li><strong>Organización (Carpetas):</strong> En el menú lateral izquierdo, tienes una sección llamada <strong>"Media Library"</strong> (o "Biblioteca de Medios"). Puedes entrar allí para subir todas tus fotos <em>antes</em> de crear las entradas. Recomendamos usar la Media Library para <strong>crear carpetas</strong> (ej. "Destinos", "Banners", "Logos Aerolíneas") y mantener todo ordenado.</li>
+    </ul>
+    
+    <img src="8b3e8f6b-fdfb-4cbd-b531-44b9549f4ad2.jpeg" alt="Ventana para añadir nuevos archivos a la Media Library">
+
+    <ul>
+        <li><strong>Optimización (¡MUY IMPORTANTE!):</strong> Para evitar que el servidor se llene y que la web funcione lenta, <strong>todas las imágenes deben estar optimizadas antes de subirse</strong>. Esto significa que deben tener un buen balance entre calidad y <strong>tamaño de archivo (peso)</strong>. Imágenes muy pesadas (ej. de varios MB) están prohibidas y afectarán el rendimiento de la web.</li>
+        <li><strong>Formato (Horizontal):</strong> En lo posible, <strong>intenta subir siempre imágenes en formato horizontal (apaisado)</strong>. Nuestro sistema tomará esa imagen y la "cropeará" (recortará) automáticamente para que entre en la caja que le corresponde, ya sea un banner principal (horizontal) o una tarjeta de destino (vertical). Usar imágenes horizontales asegura el mejor resultado.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. El Orden SÍ Importa: Flujo de Trabajo</h2>
+    <p>Para que todo funcione correctamente, debes crear las cosas en un orden específico. No puedes "asignar" una aerolínea a un paquete si esa aerolínea no existe todavía.</p>
+    <p><strong>El orden recomendado es:</strong></p>
+    <ol>
+        <li>Primero, crea las <strong>Aerolíneas</strong>.</li>
+        <li>Segundo, crea los <strong>Destinos-Descuentos</strong>.</li>
+        <li>Tercero, crea los <strong>Paquetes</strong> y <strong>Promos</strong>, ya que estos dependerán de los dos anteriores.</li>
+    </ol>
+
+    <hr>
+
+    <h2>5. Tareas Específicas: Paso a Paso</h2>
+    <p>Aquí te explicamos cómo crear los tipos de contenido más importantes.</p>
+
+    <h3>Tarea A: Cómo crear una Aerolínea</h3>
+    <p><em>Es el primer paso, necesario para crear paquetes y promos.</em></p>
+    <ol>
+        <li>En el menú lateral, haz clic en <strong>Aerolinea</strong>. Verás una pantalla (posiblemente vacía) con un botón azul <strong>"+ Create new entry"</strong>. Haz clic en él.</li>
+        
+        <img src="f97a9002-3fba-4641-823c-5c55f0dac9b4.jpeg" alt="Pantalla de la colección Aerolínea vacía">
+
+        <li>Se abrirá el formulario para crear la entrada. Rellena el campo <strong>nombre</strong> (ej. "Latam Airlines") y haz clic en el botón <code>+</code> en la caja de <strong>logo</strong> para subir su imagen.</li>
+        
+        <img src="6c06c882-8ad4-4b9a-a40b-990c15ad1a21.jpeg" alt="Formulario vacío para crear una Aerolínea">
+
+        <li>Una vez completado, se verá así.</li>
+        
+        <img src="0ed64f6c-5908-4333-862a-2d568980149d.jpeg" alt="Formulario de Aerolínea completo con datos">
+
+        <li>Haz clic en <strong>Guardar</strong> y luego en <strong>Publicar</strong> (en el panel de la derecha).</li>
+    </ol>
+
+    <h3>Tarea B: Cómo crear un Destino o un Descuento (¡Importante!)</h3>
+    <p>Esta sección es especial. Un mismo formulario sirve para crear dos cosas diferentes: un <strong>Destino</strong> (que aparece en las tarjetas) o un <strong>Descuento</strong> (que aparece en el banner principal).</p>
+    <p>La clave es el campo llamado <strong><code>esDestino</code></strong>.</p>
+
+    <h4>Caso 1: QUIERO CREAR UN DESTINO (para las tarjetas de abajo)</h4>
+    <ol>
+        <li>En el menú, ve a <strong>Destino-Descuento</strong>.</li>
+        <li>Haz clic en <strong>"+ Create new entry"</strong>.</li>
+        <li><strong>Rellena el Título:</strong> (ej. "Cancún", "Patagonia").</li>
+        <li><strong>Sube la imagen:</strong> Sube la foto que se verá en la tarjeta del destino. (Recuerda las reglas de la sección 3: optimizada y horizontal).</li>
+        <li><strong>Selector <code>esDestino</code>:</strong> Activa esta opción (ponla en <strong>SÍ</strong> o <strong>TRUE</strong>).
+            <blockquote><p><strong>Importante:</strong> Al marcar <code>esDestino</code> como <strong>SÍ</strong>, le dices al sistema que esto es un destino y debe ir en la sección de tarjetas.</p></blockquote>
+        </li>
+        <li>Haz clic en <strong>Guardar</strong> y <strong>Publicar</strong>.</li>
+    </ol>
+
+    <h4>Caso 2: QUIERO CREAR UN DESCUENTO (para el banner principal)</h4>
+    <ol>
+        <li>En el menú, ve a <strong>Destino-Descuento</strong>.</li>
+        <li>Haz clic en <strong>"+ Create new entry"</strong>.</li>
+        <li><strong>Rellena el Título:</strong> (ej. "40% OFF a Europa", "Cyber Monday").</li>
+        <li><strong>Sube la imagen:</strong> Sube la imagen grande y horizontal para el banner principal (hero). (Recuerda las reglas de la sección 3).</li>
+        <li><strong>Selector <code>esDestino</code>:</strong> Asegúrate de que esta opción esté <strong>APAGADA</strong> (en <strong>NO</strong> o <strong>FALSE</strong>).
+            <blockquote><p><strong>Importante:</strong> Al dejar <code>esDestino</code> como <strong>NO</strong>, le dices al sistema que esto es un descuento y debe ir en el banner principal.</p></blockquote>
+        </li>
+        <li>Haz clic en <strong>Guardar</strong> y <strong>Publicar</strong>.</li>
+    </ol>
+
+    <h3>Tarea C: Cómo crear un Paquete (con Relaciones)</h3>
+    <p>Un paquete une todo: tiene una aerolínea, pertenece a un destino y tiene precios de hoteles.</p>
+    <ol>
+        <li>Asegúrate de que la <code>Aerolinea</code> y el <code>Destino-Descuento</code> para este paquete <em>ya existan</em>.</li>
+        <li>En el menú, ve a <strong>Paquete</strong>.</li>
+        <li>Haz clic en <strong>"+ Create new entry"</strong>.</li>
+        <li>Rellena los campos básicos del paquete (Nombre, descripción, días, etc.).</li>
+        <li><strong>Completar la sección 'Aéreos':</strong>
+            <ul>
+                <li>Busca la sección "aereos". Al principio, estará vacía. Haz clic en el botón <code>+</code> ("Click to add one").</li>
+                
+                <img src="765b0420-25a7-4870-883c-a03f2f02becf.jpeg" alt="Componente 'aereos' vacío">
+
+                <li>Se desplegarán todos los campos del vuelo. Rellénalos uno por uno.</li>
+                <li><strong>Asignar Aerolínea:</strong> Al final de esta sección, busca <strong>"aerolinea"</strong> y selecciona la que creaste en la Tarea A.</li>
+                
+                <img src="fbc42010-3da1-4b40-802f-4a549c2d7a7a.jpeg" alt="Formulario del componente 'aereos' completo">
+
+                <li><strong>Vuelo:</strong> Rellena los siguientes campos:
+                    <ul>
+                        <li><strong>Código Aeropuerto Salida:</strong> (ej. EZE)</li>
+                        <li><strong>Hora de Salida:</strong> (ej. 10:30)</li>
+                        <li><strong>Código Aeropuerto Destino:</strong> (ej. MIA)</li>
+                        <li><strong>Hora de Llegada:</strong> (ej. 18:00)</li>
+                    </ul>
+                </li>
+                <li><strong>Equipaje:</strong> Marca el selector (SÍ/NO) si "Incluye equipaje de bodega".</li>
+                <li><strong>Escalas:</strong> Marca el selector (SÍ/NO) si "Tiene escalas".</li>
+                <li><strong>Si marcas SÍ en escalas:</strong> Se habilitará un nuevo componente "escala". Haz clic en <code>+ Add an entry</code> y rellena:
+                    <ul>
+                        <li><strong>Tiempo en escala:</strong> (ej. "2 horas 30 minutos")</li>
+                        <li><strong>Código Aeropuerto Escala:</strong> (ej. BOG)</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Cotizaciones de Hoteles (Colección):</strong>
+            <ul>
+                <li>Busca la sección "Cotizaciones de Hoteles" (o como se llame).</li>
+                <li>Verás un botón para <strong>"Añadir nuevo..."</strong>.</li>
+                <li>Rellena los campos del primer hotel (Nombre del Hotel, precio, estrellas, etc.).</li>
+                <li>Si el paquete tiene más opciones de hoteles, vuelve a hacer clic en <strong>"Añadir nuevo..."</strong> para agregar otro hotel. Puedes agregar tantos como necesites.</li>
+            </ul>
+        </li>
+        <li>Haz clic en <strong>Guardar</strong> y <strong>Publicar</strong>.</li>
+    </ol>
+
+    <h3>Tarea D: Cómo crear una Promo</h3>
+    <p>El proceso para crear una Promo es <strong>casi idéntico</strong> al de crear un Paquete.</p>
+    <ol>
+        <li>En el menú, ve a <strong>Promo</strong>.</li>
+        <li>Haz clic en <strong>"+ Create new entry"</strong>.</li>
+        <li>Rellena los campos de la promo (Título, porcentaje de descuento, etc.).</li>
+        <li><strong>Completar la sección 'Aéreos':</strong> Sigue exactamente los mismos pasos de la Tarea C, punto 5. (Ver las imágenes de la Tarea C como referencia).</li>
+        <li>Haz clic en <strong>Guardar</strong> y <strong>Publicar</strong>.</li>
+    </ol>
+
+    <h2>6. ¿Qué significa "Guardar" vs "Publicar"?</h2>
+    <p>En el panel de la derecha (ver imagen de Tarea A), siempre verás dos botones:</p>
+    <ul>
+        <li><strong>Guardar (Save):</strong> Esto guarda tu trabajo como un <strong>borrador</strong>. Los cambios se guardan en el panel, pero <strong>NO</strong> son visibles para los clientes en la página web. Es útil si quieres cargar algo y que alguien más lo revise antes.</li>
+        <li><strong>Publicar (Publish):</strong> Esto hace que tu contenido (la nueva promo, el destino, etc.) sea <strong>visible públicamente</strong> en la página web.</li>
+    </ul>
+
+    <blockquote>
+        <p><strong>Regla de oro:</strong> Siempre <strong>Guarda</strong> tu progreso y, cuando estés 100% seguro, haz clic en <strong>Publicar</strong>.</p>
+    </blockquote>
+
+</body>
+</html>
